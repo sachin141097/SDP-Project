@@ -1,0 +1,209 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/sachin/Downloads/chefpr.java",
+		"/C/Users/sachin/Desktop/Main.java",
+		"/C/Users/sachin/Downloads/anagrams.java",
+		"/D/hackerearth codes/shittyfortune.java",
+		"/D/conrelation.java",
+		"/E/phpprojects/BookRentSystem/PaytmKit/TxnTest.php",
+		"/E/phpprojects/BookRentSystem/PaytmKit/pgRedirect.php",
+		"/E/phpprojects/BookRentSystem/PaytmKit/lib/encdec_paytm.php",
+		"/E/phpprojects/BookRentSystem/PaytmKit/lib/config_paytm.php",
+		"/E/phpprojects/BookRentSystem/HomePage.php",
+		"/E/phpprojects/new1/helper/security.php",
+		"/E/phpprojects/new1/css/forgotpass.css",
+		"/E/phpprojects/BookRentSystem/placeorder.php",
+		"/E/phpprojects/new1/contactform.php",
+		"/E/phpprojects/new1/captcha.php",
+		"/E/phpprojects/new1/main.php",
+		"/E/phpprojects/new1/regestration.php",
+		"/E/phpprojects/new1/loginform.php",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/displaycar.aspx.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/login.aspx.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/addcardetails.aspx.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/forgot.aspx.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/Owner.aspx",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/Owner.aspx.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/User.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/WebForm1.aspx.cs",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/css/matrialize.css",
+		"/C/Users/sachin/Documents/Visual Studio 2015/Projects/CarRentalSystem/CarRentalSystem/css/materialize.min.css",
+		"/E/phpprojects/new1/profile.php",
+		"/D/hackerearth codes/modcheck.java",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/demohomepanel.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Login.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/SearchResult.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Signp.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/show_merge_req.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/ShowConflictingFiles.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Account.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/create_branch.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/changePassword.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Email.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/faqs.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Graph.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Home.aspx.cs",
+		"/E/Version-Control-System-MyGIT-master/Version-Control-System-MyGIT-master/WebApplication1/Browse.aspx.cs",
+		"/D/hackerearth codes/password.java"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "CarRentalSystem.sublime-project",
+	"replace":
+	{
+		"height": 88.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

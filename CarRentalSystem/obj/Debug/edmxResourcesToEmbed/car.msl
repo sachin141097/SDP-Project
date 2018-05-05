@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="carrentalModelStoreContainer" CdmEntityContainer="carrentalEntities">
+    <EntitySetMapping Name="customers">
+      <EntityTypeMapping TypeName="carrentalModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+          <ScalarProperty Name="licenceno" ColumnName="licenceno" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="owners">
+      <EntityTypeMapping TypeName="carrentalModel.owner">
+        <MappingFragment StoreEntitySet="owner">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="oid" ColumnName="oid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="carrentalModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chauffers">
+      <EntityTypeMapping TypeName="carrentalModel.chauffer">
+        <MappingFragment StoreEntitySet="chauffer">
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="licenseno" ColumnName="licenseno" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="did" ColumnName="did" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="offers">
+      <EntityTypeMapping TypeName="carrentalModel.offer">
+        <MappingFragment StoreEntitySet="offer">
+          <ScalarProperty Name="discountamount" ColumnName="discountamount" />
+          <ScalarProperty Name="discountpercent" ColumnName="discountpercent" />
+          <ScalarProperty Name="ofbased" ColumnName="ofbased" />
+          <ScalarProperty Name="isonetime" ColumnName="isonetime" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="promocode" ColumnName="promocode" />
+          <ScalarProperty Name="offerid" ColumnName="offerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="feedbacks">
+      <EntityTypeMapping TypeName="carrentalModel.feedback">
+        <MappingFragment StoreEntitySet="feedback">
+          <ScalarProperty Name="fid" ColumnName="fid" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="carno" ColumnName="carno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="offeruseds">
+      <EntityTypeMapping TypeName="carrentalModel.offerused">
+        <MappingFragment StoreEntitySet="offerused">
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="offerid" ColumnName="offerid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="payments">
+      <EntityTypeMapping TypeName="carrentalModel.payment">
+        <MappingFragment StoreEntitySet="payment">
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="nameoncard" ColumnName="nameoncard" />
+          <ScalarProperty Name="cardno" ColumnName="cardno" />
+          <ScalarProperty Name="paymentmode" ColumnName="paymentmode" />
+          <ScalarProperty Name="amountpaid" ColumnName="amountpaid" />
+          <ScalarProperty Name="bookingid" ColumnName="bookingid" />
+          <ScalarProperty Name="transactionid" ColumnName="transactionid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carrequests">
+      <EntityTypeMapping TypeName="carrentalModel.carrequest">
+        <MappingFragment StoreEntitySet="carrequests">
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="requeststatus" ColumnName="requeststatus" />
+          <ScalarProperty Name="carimage" ColumnName="carimage" />
+          <ScalarProperty Name="rentprice" ColumnName="rentprice" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="carrequestid" ColumnName="carrequestid" />
+          <ScalarProperty Name="carno" ColumnName="carno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vehicles">
+      <EntityTypeMapping TypeName="carrentalModel.vehicle">
+        <MappingFragment StoreEntitySet="vehicle">
+          <ScalarProperty Name="priceperday" ColumnName="priceperday" />
+          <ScalarProperty Name="quantity" ColumnName="quantity" />
+          <ScalarProperty Name="mileage" ColumnName="mileage" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="brand" ColumnName="brand" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="vehicleid" ColumnName="vehicleid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="carstatus">
+      <EntityTypeMapping TypeName="carrentalModel.carstatu">
+        <MappingFragment StoreEntitySet="carstatus">
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="carno" ColumnName="carno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="carrentalModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="aid" ColumnName="aid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bookings">
+      <EntityTypeMapping TypeName="carrentalModel.booking">
+        <MappingFragment StoreEntitySet="booking">
+          <ScalarProperty Name="year" ColumnName="year" />
+          <ScalarProperty Name="month" ColumnName="month" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="penaltyamount" ColumnName="penaltyamount" />
+          <ScalarProperty Name="actualenddate" ColumnName="actualenddate" />
+          <ScalarProperty Name="rentalamount" ColumnName="rentalamount" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="carno" ColumnName="carno" />
+          <ScalarProperty Name="cid" ColumnName="cid" />
+          <ScalarProperty Name="bookingid" ColumnName="bookingid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cardatas">
+      <EntityTypeMapping TypeName="carrentalModel.cardata">
+        <MappingFragment StoreEntitySet="cardata">
+          <ScalarProperty Name="oid" ColumnName="oid" />
+          <ScalarProperty Name="rentprice" ColumnName="rentprice" />
+          <ScalarProperty Name="enddate" ColumnName="enddate" />
+          <ScalarProperty Name="startdate" ColumnName="startdate" />
+          <ScalarProperty Name="carimage" ColumnName="carimage" />
+          <ScalarProperty Name="vehicleid" ColumnName="vehicleid" />
+          <ScalarProperty Name="carno" ColumnName="carno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

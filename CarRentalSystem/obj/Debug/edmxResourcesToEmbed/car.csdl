@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="carrentalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="carrentalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="customers" EntityType="carrentalModel.customer" />
+    <EntitySet Name="owners" EntityType="carrentalModel.owner" />
+    <EntitySet Name="Logins" EntityType="carrentalModel.Login" />
+    <EntitySet Name="chauffers" EntityType="carrentalModel.chauffer" />
+    <EntitySet Name="offers" EntityType="carrentalModel.offer" />
+    <EntitySet Name="feedbacks" EntityType="carrentalModel.feedback" />
+    <EntitySet Name="offeruseds" EntityType="carrentalModel.offerused" />
+    <EntitySet Name="payments" EntityType="carrentalModel.payment" />
+    <EntitySet Name="carrequests" EntityType="carrentalModel.carrequest" />
+    <EntitySet Name="vehicles" EntityType="carrentalModel.vehicle" />
+    <EntitySet Name="carstatus" EntityType="carrentalModel.carstatu" />
+    <EntitySet Name="admins" EntityType="carrentalModel.admin" />
+    <EntitySet Name="bookings" EntityType="carrentalModel.booking" />
+    <EntitySet Name="cardatas" EntityType="carrentalModel.cardata" />
+    <AssociationSet Name="vehicleid" Association="carrentalModel.vehicleid">
+      <End Role="vehicle" EntitySet="vehicles" />
+      <End Role="cardata" EntitySet="cardatas" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="customer">
+    <Key>
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="licenceno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="mobileno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="owner">
+    <Key>
+      <PropertyRef Name="oid" />
+    </Key>
+    <Property Name="oid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Role" />
+      <PropertyRef Name="LoginId" />
+    </Key>
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LoginId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chauffer">
+    <Key>
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="did" Type="Int32" Nullable="false" />
+    <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="salary" Type="Int32" Nullable="false" />
+    <Property Name="licenseno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="offer">
+    <Key>
+      <PropertyRef Name="offerid" />
+    </Key>
+    <Property Name="offerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="promocode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="isonetime" Type="Int32" />
+    <Property Name="ofbased" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="discountpercent" Type="Int32" />
+    <Property Name="discountamount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="feedback">
+    <Key>
+      <PropertyRef Name="fid" />
+    </Key>
+    <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cid" Type="Int32" Nullable="false" />
+    <Property Name="rating" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="offerused">
+    <Key>
+      <PropertyRef Name="offerid" />
+      <PropertyRef Name="cid" />
+    </Key>
+    <Property Name="offerid" Type="Int32" Nullable="false" />
+    <Property Name="cid" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="payment">
+    <Key>
+      <PropertyRef Name="transactionid" />
+    </Key>
+    <Property Name="transactionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bookingid" Type="Int32" Nullable="false" />
+    <Property Name="amountpaid" Type="Int32" Nullable="false" />
+    <Property Name="paymentmode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="nameoncard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="carrequest">
+    <Key>
+      <PropertyRef Name="carrequestid" />
+    </Key>
+    <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="carrequestid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="capacity" Type="Int32" />
+    <Property Name="mileage" Type="Double" />
+    <Property Name="rentprice" Type="Int32" />
+    <Property Name="carimage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="requeststatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="startdate" Type="DateTime" Precision="3" />
+    <Property Name="enddate" Type="DateTime" Precision="3" />
+    <Property Name="oid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vehicle">
+    <Key>
+      <PropertyRef Name="vehicleid" />
+    </Key>
+    <Property Name="vehicleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="color" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="model" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="brand" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="capacity" Type="Int32" Nullable="false" />
+    <Property Name="mileage" Type="Double" Nullable="false" />
+    <Property Name="quantity" Type="Int32" />
+    <Property Name="priceperday" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="cardatas" Relationship="carrentalModel.vehicleid" FromRole="vehicle" ToRole="cardata" />
+  </EntityType>
+  <EntityType Name="carstatu">
+    <Key>
+      <PropertyRef Name="carno" />
+      <PropertyRef Name="startdate" />
+      <PropertyRef Name="enddate" />
+    </Key>
+    <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="enddate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="did" Type="Int32" />
+  </EntityType>
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="aid" />
+    </Key>
+    <Property Name="aid" Type="Int32" Nullable="false" />
+    <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="booking">
+    <Key>
+      <PropertyRef Name="bookingid" />
+    </Key>
+    <Property Name="bookingid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cid" Type="Int32" Nullable="false" />
+    <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="enddate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="rentalamount" Type="Int32" Nullable="false" />
+    <Property Name="actualenddate" Type="DateTime" Precision="3" />
+    <Property Name="penaltyamount" Type="Int32" />
+    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="did" Type="Int32" />
+    <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="month" Type="Int32" />
+    <Property Name="year" Type="Int32" />
+  </EntityType>
+  <EntityType Name="cardata">
+    <Key>
+      <PropertyRef Name="carno" />
+    </Key>
+    <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="vehicleid" Type="Int32" Nullable="false" />
+    <Property Name="carimage" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="startdate" Type="DateTime" Precision="3" />
+    <Property Name="enddate" Type="DateTime" Precision="3" />
+    <Property Name="rentprice" Type="Int32" />
+    <Property Name="oid" Type="Int32" />
+    <NavigationProperty Name="vehicle" Relationship="carrentalModel.vehicleid" FromRole="cardata" ToRole="vehicle" />
+  </EntityType>
+  <Association Name="vehicleid">
+    <End Type="carrentalModel.vehicle" Role="vehicle" Multiplicity="1" />
+    <End Type="carrentalModel.cardata" Role="cardata" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="vehicle">
+        <PropertyRef Name="vehicleid" />
+      </Principal>
+      <Dependent Role="cardata">
+        <PropertyRef Name="vehicleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

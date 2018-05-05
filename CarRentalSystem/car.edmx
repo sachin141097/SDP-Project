@@ -1,0 +1,630 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="carrentalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="aid" />
+          </Key>
+          <Property Name="aid" Type="int" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="booking">
+          <Key>
+            <PropertyRef Name="bookingid" />
+          </Key>
+          <Property Name="bookingid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cid" Type="int" Nullable="false" />
+          <Property Name="carno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="startdate" Type="datetime" Nullable="false" />
+          <Property Name="enddate" Type="datetime" Nullable="false" />
+          <Property Name="rentalamount" Type="int" Nullable="false" />
+          <Property Name="actualenddate" Type="datetime" />
+          <Property Name="penaltyamount" Type="int" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="did" Type="int" />
+          <Property Name="address" Type="nvarchar(max)" />
+          <Property Name="month" Type="int" />
+          <Property Name="year" Type="int" />
+        </EntityType>
+        <EntityType Name="cardata">
+          <Key>
+            <PropertyRef Name="carno" />
+          </Key>
+          <Property Name="carno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="vehicleid" Type="int" Nullable="false" />
+          <Property Name="carimage" Type="nvarchar" MaxLength="2000" />
+          <Property Name="startdate" Type="datetime" />
+          <Property Name="enddate" Type="datetime" />
+          <Property Name="rentprice" Type="int" />
+          <Property Name="oid" Type="int" />
+        </EntityType>
+        <EntityType Name="carrequests">
+          <Key>
+            <PropertyRef Name="carrequestid" />
+          </Key>
+          <Property Name="carno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="carrequestid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="50" />
+          <Property Name="model" Type="nvarchar" MaxLength="50" />
+          <Property Name="color" Type="nvarchar" MaxLength="50" />
+          <Property Name="capacity" Type="int" />
+          <Property Name="mileage" Type="float" />
+          <Property Name="rentprice" Type="int" />
+          <Property Name="carimage" Type="nvarchar" MaxLength="50" />
+          <Property Name="requeststatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="startdate" Type="datetime" />
+          <Property Name="enddate" Type="datetime" />
+          <Property Name="oid" Type="int" />
+        </EntityType>
+        <EntityType Name="carstatus">
+          <Key>
+            <PropertyRef Name="carno" />
+            <PropertyRef Name="startdate" />
+            <PropertyRef Name="enddate" />
+          </Key>
+          <Property Name="carno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="startdate" Type="datetime" Nullable="false" />
+          <Property Name="enddate" Type="datetime" Nullable="false" />
+          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="did" Type="int" />
+        </EntityType>
+        <EntityType Name="chauffer">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="int" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="salary" Type="int" Nullable="false" />
+          <Property Name="licenseno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="licenceno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="mobileno" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="feedback">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="carno" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cid" Type="int" Nullable="false" />
+          <Property Name="rating" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" />
+          <Property Name="fid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Role" />
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="Role" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LoginId" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="offer">
+          <Key>
+            <PropertyRef Name="offerid" />
+          </Key>
+          <Property Name="offerid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="promocode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="isonetime" Type="int" />
+          <Property Name="ofbased" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="discountpercent" Type="int" />
+          <Property Name="discountamount" Type="int" />
+        </EntityType>
+        <EntityType Name="offerused">
+          <Key>
+            <PropertyRef Name="offerid" />
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="offerid" Type="int" Nullable="false" />
+          <Property Name="cid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="owner">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="transactionid" />
+          </Key>
+          <Property Name="transactionid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="bookingid" Type="int" Nullable="false" />
+          <Property Name="amountpaid" Type="int" Nullable="false" />
+          <Property Name="paymentmode" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="cardno" Type="nvarchar" MaxLength="50" />
+          <Property Name="nameoncard" Type="nvarchar" MaxLength="50" />
+          <Property Name="phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vehicle">
+          <Key>
+            <PropertyRef Name="vehicleid" />
+          </Key>
+          <Property Name="vehicleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="color" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="model" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="brand" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="capacity" Type="int" Nullable="false" />
+          <Property Name="mileage" Type="float" Nullable="false" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="priceperday" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="vehicleid">
+          <End Role="vehicle" Type="Self.vehicle" Multiplicity="1" />
+          <End Role="cardata" Type="Self.cardata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicleid" />
+            </Principal>
+            <Dependent Role="cardata">
+              <PropertyRef Name="vehicleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="carrentalModelStoreContainer">
+          <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="booking" EntityType="Self.booking" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cardata" EntityType="Self.cardata" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="carrequests" EntityType="Self.carrequests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="carstatus" EntityType="Self.carstatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="chauffer" EntityType="Self.chauffer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="feedback" EntityType="Self.feedback" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="offer" EntityType="Self.offer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="offerused" EntityType="Self.offerused" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="owner" EntityType="Self.owner" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="payment" EntityType="Self.payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicle" EntityType="Self.vehicle" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="vehicleid" Association="Self.vehicleid">
+            <End Role="vehicle" EntitySet="vehicle" />
+            <End Role="cardata" EntitySet="cardata" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="carrentalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="carrentalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="customers" EntityType="carrentalModel.customer" />
+          <EntitySet Name="owners" EntityType="carrentalModel.owner" />
+          <EntitySet Name="Logins" EntityType="carrentalModel.Login" />
+          <EntitySet Name="chauffers" EntityType="carrentalModel.chauffer" />
+          <EntitySet Name="offers" EntityType="carrentalModel.offer" />
+          <EntitySet Name="feedbacks" EntityType="carrentalModel.feedback" />
+          <EntitySet Name="offeruseds" EntityType="carrentalModel.offerused" />
+          <EntitySet Name="payments" EntityType="carrentalModel.payment" />
+          <EntitySet Name="carrequests" EntityType="carrentalModel.carrequest" />
+          <EntitySet Name="vehicles" EntityType="carrentalModel.vehicle" />
+          <EntitySet Name="carstatus" EntityType="carrentalModel.carstatu" />
+          <EntitySet Name="admins" EntityType="carrentalModel.admin" />
+          <EntitySet Name="bookings" EntityType="carrentalModel.booking" />
+          <EntitySet Name="cardatas" EntityType="carrentalModel.cardata" />
+          <AssociationSet Name="vehicleid" Association="carrentalModel.vehicleid">
+            <End Role="vehicle" EntitySet="vehicles" />
+            <End Role="cardata" EntitySet="cardatas" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="cid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="licenceno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="mobileno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="owner">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Role" />
+            <PropertyRef Name="LoginId" />
+          </Key>
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginId" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="chauffer">
+          <Key>
+            <PropertyRef Name="did" />
+          </Key>
+          <Property Name="did" Type="Int32" Nullable="false" />
+          <Property Name="firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="salary" Type="Int32" Nullable="false" />
+          <Property Name="licenseno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="offer">
+          <Key>
+            <PropertyRef Name="offerid" />
+          </Key>
+          <Property Name="offerid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="promocode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="isonetime" Type="Int32" />
+          <Property Name="ofbased" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="discountpercent" Type="Int32" />
+          <Property Name="discountamount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="feedback">
+          <Key>
+            <PropertyRef Name="fid" />
+          </Key>
+          <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cid" Type="Int32" Nullable="false" />
+          <Property Name="rating" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="fid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="offerused">
+          <Key>
+            <PropertyRef Name="offerid" />
+            <PropertyRef Name="cid" />
+          </Key>
+          <Property Name="offerid" Type="Int32" Nullable="false" />
+          <Property Name="cid" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="payment">
+          <Key>
+            <PropertyRef Name="transactionid" />
+          </Key>
+          <Property Name="transactionid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="bookingid" Type="Int32" Nullable="false" />
+          <Property Name="amountpaid" Type="Int32" Nullable="false" />
+          <Property Name="paymentmode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="cardno" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="nameoncard" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="carrequest">
+          <Key>
+            <PropertyRef Name="carrequestid" />
+          </Key>
+          <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="carrequestid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brand" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="capacity" Type="Int32" />
+          <Property Name="mileage" Type="Double" />
+          <Property Name="rentprice" Type="Int32" />
+          <Property Name="carimage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="requeststatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="startdate" Type="DateTime" Precision="3" />
+          <Property Name="enddate" Type="DateTime" Precision="3" />
+          <Property Name="oid" Type="Int32" />
+        </EntityType>
+        <EntityType Name="vehicle">
+          <Key>
+            <PropertyRef Name="vehicleid" />
+          </Key>
+          <Property Name="vehicleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="color" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="model" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="brand" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="capacity" Type="Int32" Nullable="false" />
+          <Property Name="mileage" Type="Double" Nullable="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="priceperday" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="cardatas" Relationship="carrentalModel.vehicleid" FromRole="vehicle" ToRole="cardata" />
+        </EntityType>
+        <EntityType Name="carstatu">
+          <Key>
+            <PropertyRef Name="carno" />
+            <PropertyRef Name="startdate" />
+            <PropertyRef Name="enddate" />
+          </Key>
+          <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="enddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="did" Type="Int32" />
+        </EntityType>
+        <EntityType Name="admin">
+          <Key>
+            <PropertyRef Name="aid" />
+          </Key>
+          <Property Name="aid" Type="Int32" Nullable="false" />
+          <Property Name="firstname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="lastname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="booking">
+          <Key>
+            <PropertyRef Name="bookingid" />
+          </Key>
+          <Property Name="bookingid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cid" Type="Int32" Nullable="false" />
+          <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="startdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="enddate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="rentalamount" Type="Int32" Nullable="false" />
+          <Property Name="actualenddate" Type="DateTime" Precision="3" />
+          <Property Name="penaltyamount" Type="Int32" />
+          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="did" Type="Int32" />
+          <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="month" Type="Int32" />
+          <Property Name="year" Type="Int32" />
+        </EntityType>
+        <EntityType Name="cardata">
+          <Key>
+            <PropertyRef Name="carno" />
+          </Key>
+          <Property Name="carno" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="vehicleid" Type="Int32" Nullable="false" />
+          <Property Name="carimage" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+          <Property Name="startdate" Type="DateTime" Precision="3" />
+          <Property Name="enddate" Type="DateTime" Precision="3" />
+          <Property Name="rentprice" Type="Int32" />
+          <Property Name="oid" Type="Int32" />
+          <NavigationProperty Name="vehicle" Relationship="carrentalModel.vehicleid" FromRole="cardata" ToRole="vehicle" />
+        </EntityType>
+        <Association Name="vehicleid">
+          <End Type="carrentalModel.vehicle" Role="vehicle" Multiplicity="1" />
+          <End Type="carrentalModel.cardata" Role="cardata" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="vehicle">
+              <PropertyRef Name="vehicleid" />
+            </Principal>
+            <Dependent Role="cardata">
+              <PropertyRef Name="vehicleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="carrentalModelStoreContainer" CdmEntityContainer="carrentalEntities">
+          <EntitySetMapping Name="customers">
+            <EntityTypeMapping TypeName="carrentalModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="mobileno" ColumnName="mobileno" />
+                <ScalarProperty Name="licenceno" ColumnName="licenceno" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="owners">
+            <EntityTypeMapping TypeName="carrentalModel.owner">
+              <MappingFragment StoreEntitySet="owner">
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="oid" ColumnName="oid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logins">
+            <EntityTypeMapping TypeName="carrentalModel.Login">
+              <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chauffers">
+            <EntityTypeMapping TypeName="carrentalModel.chauffer">
+              <MappingFragment StoreEntitySet="chauffer">
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="licenseno" ColumnName="licenseno" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="did" ColumnName="did" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="offers">
+            <EntityTypeMapping TypeName="carrentalModel.offer">
+              <MappingFragment StoreEntitySet="offer">
+                <ScalarProperty Name="discountamount" ColumnName="discountamount" />
+                <ScalarProperty Name="discountpercent" ColumnName="discountpercent" />
+                <ScalarProperty Name="ofbased" ColumnName="ofbased" />
+                <ScalarProperty Name="isonetime" ColumnName="isonetime" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="promocode" ColumnName="promocode" />
+                <ScalarProperty Name="offerid" ColumnName="offerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="feedbacks">
+            <EntityTypeMapping TypeName="carrentalModel.feedback">
+              <MappingFragment StoreEntitySet="feedback">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="carno" ColumnName="carno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="offeruseds">
+            <EntityTypeMapping TypeName="carrentalModel.offerused">
+              <MappingFragment StoreEntitySet="offerused">
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="offerid" ColumnName="offerid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="payments">
+            <EntityTypeMapping TypeName="carrentalModel.payment">
+              <MappingFragment StoreEntitySet="payment">
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="nameoncard" ColumnName="nameoncard" />
+                <ScalarProperty Name="cardno" ColumnName="cardno" />
+                <ScalarProperty Name="paymentmode" ColumnName="paymentmode" />
+                <ScalarProperty Name="amountpaid" ColumnName="amountpaid" />
+                <ScalarProperty Name="bookingid" ColumnName="bookingid" />
+                <ScalarProperty Name="transactionid" ColumnName="transactionid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="carrequests">
+            <EntityTypeMapping TypeName="carrentalModel.carrequest">
+              <MappingFragment StoreEntitySet="carrequests">
+                <ScalarProperty Name="oid" ColumnName="oid" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="requeststatus" ColumnName="requeststatus" />
+                <ScalarProperty Name="carimage" ColumnName="carimage" />
+                <ScalarProperty Name="rentprice" ColumnName="rentprice" />
+                <ScalarProperty Name="mileage" ColumnName="mileage" />
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="carrequestid" ColumnName="carrequestid" />
+                <ScalarProperty Name="carno" ColumnName="carno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicles">
+            <EntityTypeMapping TypeName="carrentalModel.vehicle">
+              <MappingFragment StoreEntitySet="vehicle">
+                <ScalarProperty Name="priceperday" ColumnName="priceperday" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="mileage" ColumnName="mileage" />
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
+                <ScalarProperty Name="brand" ColumnName="brand" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="vehicleid" ColumnName="vehicleid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="carstatus">
+            <EntityTypeMapping TypeName="carrentalModel.carstatu">
+              <MappingFragment StoreEntitySet="carstatus">
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="carno" ColumnName="carno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="admins">
+            <EntityTypeMapping TypeName="carrentalModel.admin">
+              <MappingFragment StoreEntitySet="admin">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="aid" ColumnName="aid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bookings">
+            <EntityTypeMapping TypeName="carrentalModel.booking">
+              <MappingFragment StoreEntitySet="booking">
+                <ScalarProperty Name="year" ColumnName="year" />
+                <ScalarProperty Name="month" ColumnName="month" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="did" ColumnName="did" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="penaltyamount" ColumnName="penaltyamount" />
+                <ScalarProperty Name="actualenddate" ColumnName="actualenddate" />
+                <ScalarProperty Name="rentalamount" ColumnName="rentalamount" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="carno" ColumnName="carno" />
+                <ScalarProperty Name="cid" ColumnName="cid" />
+                <ScalarProperty Name="bookingid" ColumnName="bookingid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cardatas">
+            <EntityTypeMapping TypeName="carrentalModel.cardata">
+              <MappingFragment StoreEntitySet="cardata">
+                <ScalarProperty Name="oid" ColumnName="oid" />
+                <ScalarProperty Name="rentprice" ColumnName="rentprice" />
+                <ScalarProperty Name="enddate" ColumnName="enddate" />
+                <ScalarProperty Name="startdate" ColumnName="startdate" />
+                <ScalarProperty Name="carimage" ColumnName="carimage" />
+                <ScalarProperty Name="vehicleid" ColumnName="vehicleid" />
+                <ScalarProperty Name="carno" ColumnName="carno" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
